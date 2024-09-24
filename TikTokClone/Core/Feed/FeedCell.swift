@@ -13,7 +13,7 @@ struct FeedCell: View {
         ZStack {
             Rectangle()
                 .fill(.purple)
-                .frame(width: 395, height: 800)
+                .frame(width: 395, height: 820)
                 .overlay {
                     Text("Post \(post)")
                         .foregroundColor(.white)
@@ -22,7 +22,7 @@ struct FeedCell: View {
             VStack {
                Spacer()
                 
-                HStack {
+                HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
                         Text("Antony Bil")
                             .fontWeight(.semibold)
@@ -34,29 +34,57 @@ struct FeedCell: View {
                     Spacer()
                     
                     //use vstack fore side buttons
-                    VStack{
+                    VStack(spacing: 28){
+                        Circle()
+                            .frame(width: 48, height: 48)
+                            .foregroundStyle(.gray)
+                        
                         Button {
                             
                         } label: {
-                            Image(systemName: "heart.fill")
+                            VStack{
+                                Image(systemName: "heart.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundStyle(.white)
+                                Text("10")
+                                    .font(.caption)
+                                    .foregroundStyle(.white)
+                                    .bold()
+                            }
                         }
                         
                         Button {
                             
                         } label: {
-                            Image(systemName: "ellipsis.bubble.fill")
+                            VStack{
+                                Image(systemName: "ellipsis.bubble.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundStyle(.white)
+                                Text("10")
+                                    .font(.caption)
+                                    .foregroundStyle(.white)
+                                    .bold()
+                            }
                         }
                         
                         Button {
                             
                         } label: {
                             Image(systemName: "bookmark.fill")
+                                .resizable()
+                                .frame(width: 22, height: 28)
+                                .foregroundStyle(.white)
                         }
                         
                         Button {
                             
                         } label: {
                             Image(systemName: "arrowshape.turn.up.right.fill")
+                                .resizable()
+                                .frame(width: 28, height: 28)
+                                .foregroundStyle(.white)
                         }
 
 
@@ -64,6 +92,7 @@ struct FeedCell: View {
 
                 }
             }
+            .padding()
         }
     }
 }
