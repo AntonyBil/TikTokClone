@@ -91,6 +91,7 @@ struct FeedCell: View {
                     }
 
                 }
+                .padding(.bottom, 60)
             }
             .padding()
         }
